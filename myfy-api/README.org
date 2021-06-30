@@ -1,0 +1,97 @@
+#+TITLE: README
+#+AUTHOR: Ian Kollipara
+
+* Table of Contents :toc:
+- [[#introduction][Introduction]]
+  - [[#goals][Goals]]
+- [[#architecture][Architecture]]
+  - [[#development-process][Development Process]]
+  - [[#app-structure][App Structure]]
+  - [[#myfy-api-structure][MyFy-api Structure]]
+  - [[#tests-structure][tests Structure]]
+
+* Introduction
+MyFy-API is written =Python 3.9=. It uses
+=Poetry= as the Package Manager and =Pytest=
+for creating tests. The Framework used is
+=FastAPI= with adherence to a strict architecture.
+
+** Goals
+- [ ] Authorized JWT API keys
+- [ ] Completely Statically Typed Codebase
+- [ ] 70%+ Test Coverage
+
+* Architecture
+** Development Process
+The API will use TDD (Test Driven Development) and will follow a
+2 week sprint structure, where a PR will be reviewed and potentially merged in.
+
+** App Structure
+MyFy-API is laid out in 2 main folders:
+- MyFy-api/
+  This is where the source code for the project is written.
+  The structure will be expanded upon [[MyFy-api Structure][below]].
+
+- tests/
+  This is where the test files are written.
+  The structure will be expanded upon [[tests Structure][below]].
+
+** MyFy-api Structure
+The structure for the app will follow a simple layout.
+There is 1 top level file, the =__init__.py=. The rest of
+the app is split into different routers.
+
+*** Router Structure
+Each Router will have its own sub-package. Each
+sub-package will have a controller that initializes
+the router and contains all endpoints for that folder.
+The router is not initialized with a prefix, that happens
+at the top level.
+
+**** Example Structure for Auth Endpoint
+#+begin_src
+/auth
+    | __init__.py
+    | controller.py
+    | service.py
+    | schemas.py
+#+end_src
+
+** tests Structure
+The tests will be laid out in 2 main folders:
+- [[Unit]]
+- [[Integration]]
+
+All tests must be passing for a PR to be accepted and merged into
+the project. As tests grow there might be more categories added.
+
+*** Categories
+**** Unit
+This will contain test files for each module.
+Only functions are tested here, not endpoints.
+The file will be prefixed with:
+1. test_
+   This will allow =PyTest= to detect the test file.
+
+2. service
+   This is used for indexing and organizing tests.
+
+3. The Route
+   This is for indexing and organizing tests.
+
+Thus an example test filename could be:
+=test_service_auth.py=
+
+**** Integration
+This will contain a file for each router, and
+is for checking endpoints for that router. The
+=FastAPI= Test Client will be used here.
+The files will be prefixed with:
+1. test_
+   This will allow =PyTest= to detect the test file.
+
+2. The Route
+   This is for indexing and organizing tests.
+
+Thus an example test filename could be:
+=test_auth.py=
