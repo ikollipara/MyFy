@@ -57,6 +57,28 @@ at the top level.
     | schemas.py
 #+end_src
 
+*** Shared Structure
+This folder will contain code that should be used
+in different routers. This also includes database
+setup and such.
+There are 3 sub-packages that will be used:
+1. [[models]]
+2. [[lib]]
+3. [[deps]]
+
+**** models
+This will contain all =SQLAlchemy= Models.
+The initialization code for =SQLAlchemy= will
+be in the =__init__.py= file.
+
+**** lib
+This contains modules for helper functions and
+adapters that are not strictly dependencies.
+
+**** deps
+This contains modules for each dependency. These
+will be used in FastAPI's Depency Injection Functionality.
+
 ** tests Structure
 The tests will be laid out in 2 main folders:
 - [[Unit]]
