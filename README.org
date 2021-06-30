@@ -1,0 +1,45 @@
+#+TITLE: README
+#+AUTHOR: Ian Kollipara
+
+* Table of Contents :toc:
+- [[#introduction][Introduction]]
+  - [[#what-is-myfy][What is MyFy?]]
+- [[#details][Details]]
+  - [[#api][API]]
+  - [[#frontend][Frontend]]
+
+* Introduction
+** What is MyFy?
+MyFy is Spotify Data Visualization Application. This project was
+written as a learning project, and to get more comfortable with
+Full Stack Development.
+
+* Details
+** API
+*** Details
+The back-end uses FastAPI as the framework and
+Poetry for Project Management and Package Generation.
+
+**** Route Structure
+- /route_name/
+  - controller.py
+  - service.py
+
+*** Tech Stack
+- Python 3.9
+- Poetry
+- FastAPI
+- Sqlite3
+
+** Frontend
+*** Details
+The Frontend uses Preact as the Framework and
+Vite.js as the development server and builder.
+NPM is used for package management, and Bootstrap
+as the CSS Framework.
+
+*** Tech Stack
+- Preact
+- Vite.js
+- NPM
+- Bootstrap
