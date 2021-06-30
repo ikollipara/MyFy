@@ -1,0 +1,3 @@
+./myfy-frontend/node_modules
+./myfy-api/*/__pycache__
+./myfy-api/*/__mypycache__
