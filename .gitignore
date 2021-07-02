@@ -1,3 +1,7 @@
-./myfy-frontend/node_modules
-./myfy-api/*/__pycache__
-./myfy-api/*/__mypycache__
+myfy-frontend/node_modules
+myfy-api/*/__pycache__
+.pytest_cache
+myfy-api/*/.pytest_cache
+myfy-api/*/.mypy_cache
+myfy-api/myfy_api/shared/*/__pycache__
+myfy-api/tests/*/__pycache__
